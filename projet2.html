@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail Projet UX/UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+
+    <header class="header">
+        <h1>Quentin Brion</h1>
+        <p>07 83 20 81 63 | quentinbrion.aus@gmail.com</p>
+        <button id="darkmode-btn">Dark Mode 🌙</button>
+    </header>
+
+<div class="container">
+
+    <div class="carousel">
+        <div class="main-image">
+            <img id="currentImage" src="Badintown/Badintownblack.svg" alt="Projet principal">
+        </div>
+        <div class="thumbnails">
+            <img src="Badintown/Badintownbleumarron.svg" alt="image1" onclick="changeImage(this)">
+            <img src="Badintown/Badintownbleuorange.svg" alt="image2" onclick="changeImage(this)">
+            <img src="Badintown/Badintownblack.svg" alt="image3" onclick="changeImage(this)">
+        </div>
+    </div>
+
+    <div class="description">
+        <h2>BADINTOWN</h2>
+        <p>
+            BadInTown est une entreprise fictive spécialisée dans la livraison de volants de badminton directement aux clubs. J’ai d’abord créé un logo avec plusieurs déclinaisons et posé les bases de son identité visuelle. La maquette du site web est en cours de création.   
+        </p>
+        <button class="btn-more" onclick="location.href='index.html'">Page principale</button>
+    </div>
+
+</div>
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Quentin Brion - Crée de A à Z en HTML,CSS et JS avec   <i class="fa-solid fa-heart fa-beat fa-lg" style="--fa-animation-duration: 2s;"></i></p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/brion-quentin-31aba4240/" target="_blank" class="icon linkedin">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://dribbble.com/QuentinUXUI" target="_blank" class="icon dribble">
+                <i class="fa-brands fa-dribbble"></i>
+            </a>
+            <a href="mailto:quentinbrion.aus@gmail.com" class="icon email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    function changeImage(thumbnail) {
+        let mainImage = document.getElementById('currentImage');
+        mainImage.src = thumbnail.src;
+
+        // Réinitialisation des dimensions pour éviter la distorsion
+        mainImage.style.width = "100%";
+        mainImage.style.height = "auto"; // Garde les proportions
+        mainImage.style.objectFit = "contain"; // Assure un bon affichage sans déformation
+    }
+</script>
+<script>
+    const btn = document.getElementById('darkmode-btn');
+    const body = document.body;
+
+    function toggleDarkMode() {
+        body.classList.toggle('dark-mode');
+
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+            btn.textContent = 'Light Mode';
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            btn.textContent = 'Dark Mode';
+        }
+    }
+
+    btn.addEventListener('click', toggleDarkMode);
+
+    window.addEventListener('load', () => {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            btn.textContent = 'Light Mode';
+        } else {
+            btn.textContent = 'Dark Mode';
+        }
+    });
+</script>
+</body>
+</html>

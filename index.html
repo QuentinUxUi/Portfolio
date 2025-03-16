@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio UX/UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+
+</head>
+<body>
+<!-- Photo de profil ajoutée ici -->
+<div class="profile-photo"></div>
+<header class="header">
+    <h1>Quentin Brion</h1>
+    <p>07 83 20 81 63 | quentinbrion.aus@gmail.com</p>
+    <button id="darkmode-btn">Dark Mode 🌙</button>
+</header>
+</header>
+<main>
+<section class="intro">
+    <div class="card">
+        <p>
+            Bienvenue sur mon portfolio ! Futur étudiant en Mastère UX/UI à l’ESD Bordeaux, je recherche une alternance de deux ans (4 jours en entreprise, 1 jour en cours). Créatif, rigoureux et toujours de bonne humeur, j’adore concevoir des interfaces et des objets graphiques. Je ne demande qu’à apprendre et continuer de créer. Je maîtrise Figma, Illustrator, Photoshop et After Effects, avec des bases en HTML/CSS. Curieux, je suis toujours prêt à relever de nouveaux défis. Si vous souhaitez en savoir plus sur mon parcours, vous pouvez consulter mon CV.
+        </p>
+        <br>
+        <a href="CV-QuentinBrion-Alternance2025-UIUX.pdf" class="btn-cv" download="CV-QuentinBrion-Alternance2025-UIUX.pdf">Télécharger mon CV</a>
+    </div>
+</section>
+
+<section class="projects">
+    <div class="project-card">
+        <img src="./Leseclatsdevivy/Logoblack.svg" alt="Projet 1">
+        <p>Projet de fin d’année pour l’examen de mi-juin en vue de l’obtention de mon Bac+3.</p>
+        <button class="btn-more" onclick="location.href='projet1.html'">Voir plus</button>
+    </div>
+    <div class="project-card">
+        <img src="./Badintown/Badintownblack.svg" alt="Projet 2">
+        <p>Projet fictif, création de logo et mockups pour la marque BadInTown.</p>
+        <button class="btn-more" onclick="location.href='projet2.html'">Voir plus</button>
+    </div>
+    <div class="project-card">
+        <iframe class="iframe" src="https://lottie.host/embed/0d5546cf-4d6d-491f-9e01-2f423315dd6b/ISNM2VLHIs.lottie" alt="Projet 3"></iframe>
+        <p>Ce projet est encore à imaginer… Pourquoi pas le vôtre ?</p>
+        
+    </div>
+</section>
+</main>
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Quentin Brion - Crée de A à Z en HTML,CSS et JS avec   <i class="fa-solid fa-heart fa-beat fa-lg" style="--fa-animation-duration: 2s;"></i></p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/brion-quentin-31aba4240/" target="_blank" class="icon linkedin">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://dribbble.com/QuentinUXUI" target="_blank" class="icon dribble">
+                <i class="fa-brands fa-dribbble"></i>
+            </a>
+            <a href="mailto:quentinbrion.aus@gmail.com" class="icon email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    const btn = document.getElementById('darkmode-btn');
+    const body = document.body;
+
+    function toggleDarkMode() {
+        body.classList.toggle('dark-mode');
+
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+            btn.textContent = 'Light Mode';
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            btn.textContent = 'Dark Mode';
+        }
+    }
+
+    btn.addEventListener('click', toggleDarkMode);
+
+    window.addEventListener('load', () => {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            btn.textContent = 'Light Mode';
+        } else {
+            btn.textContent = 'Dark Mode';
+        }
+    });
+</script>
+</body>
+</html>

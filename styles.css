@@ -1,0 +1,351 @@
+/* Reset et généralités */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+@font-face {
+    font-family: dune;
+    src: url(Dune_Rise.otf);
+}
+h1{
+    font-family: dune, Poppins, sans-serif;
+}
+/* Styles globaux */
+body {
+    background: radial-gradient(circle at top left, #dbeafe, #f8fafc);
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(102,166,255,0.5) 10%, transparent 80%);
+    filter: blur(50px);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+}
+
+/* Photo de profil */
+.profile-photo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('../Portfolio/Photo/maphoto.png');
+    background-size: cover;
+    background-position: center;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 9;
+    top: 180px;
+}
+
+/* Introduction */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 0px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* Boutons */
+.btn-cv, .btn-more, .btn-contact {
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.btn-cv:hover, .btn-more:hover, .btn-contact:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(102,166,255,0.5);
+}
+
+/* Projets */
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+.project-card p{
+    margin-top: 20px;
+}
+.iframe{
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border: none;
+}
+
+/* Carrousel et description */
+.container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+.carousel, .description {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    max-width: 600px;
+    flex: 1;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* L'image s'ajuste sans être déformée */
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.thumbnails img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#currentImage{
+    object-fit: contain;
+}
+.thumbnails img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.description h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.description p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.footer {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 0 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.icon:hover img {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.fa-linkedin, .fa-dribbble, .fa-envelope{
+    color: black;
+}
+
+/* Dark Mode global */
+.dark-mode {
+    background: radial-gradient(circle at top left, #1e1e1e, #121212);
+    color: #e0e0e0;
+}
+
+.dark-mode .header {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .project-card,
+.dark-mode .carousel,
+.dark-mode .description,
+.dark-mode .footer,
+.dark-mode .card {
+    background: rgba(40, 40, 40, 0.9);
+    color: #e0e0e0;
+}
+.dark-mode .footer p {
+    color: #ffffff;
+}
+.dark-mode .fa-linkedin,.dark-mode  .fa-dribbble,.dark-mode  .fa-envelope{
+    color: #ffffff;
+}
+/* Bouton Dark Mode */
+#darkmode-btn {
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+#darkmode-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Ajustements boutons existants en dark mode */
+.dark-mode .btn-more,
+.dark-mode .btn-cv,
+.dark-mode .btn-contact {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode .btn-more:hover,
+.dark-mode .btn-cv:hover,
+.dark-mode .btn-contact:hover {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 8px 20px rgba(255,255,255,0.3);
+}
+
+/* Responsiveness Globale et Dark mode intégré */
+
+@media (max-width: 1024px) {
+    .footer { padding: 15px; }
+    .social-icons { gap: 12px; }
+    .icon img { width: 28px; height: 28px; }
+    .projects { justify-content: center; }
+    .project-card { width: 45%; }
+    #darkmode-btn { padding: 7px 13px; }
+}
+
+@media (max-width: 900px) {
+    .container { flex-direction: column; }
+    .main-image img { height: 300px; }
+}
+
+@media (max-width: 768px) {
+    .footer { padding: 15px; }
+    .social-icons { gap: 10px; }
+    .icon img { width: 26px; height: 26px; }
+    .project-card { width: 100%; }
+    .intro { height: auto; margin-top: 100px; }
+    .card::before { top: -70px; height: 120px; width: 120px; }
+    #darkmode-btn { padding: 6px 12px; }
+
+    .dark-mode .header,
+    .dark-mode .footer {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer { padding: 10px; }
+    .footer p { font-size: 0.9rem; }
+    .icon img { width: 24px; height: 24px; }
+    .description,
+    .carousel,
+    .project-card { padding: 20px; }
+    .thumbnails img { width: 60px; height: 60px; }
+    .main-image img { height: 200px; }
+    #darkmode-btn { padding: 6px 12px; }
+}
