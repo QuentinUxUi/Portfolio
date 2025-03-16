@@ -340,6 +340,7 @@ body::before {
     .social-icons { gap: 10px; }
     .icon img { width: 26px; height: 26px; }
     .description{ margin-left: 20px;margin-right: 20px;}
+    .carousel{ margin-left: 20px;margin-right: 20px;}
     .project-card { width: 100%; }
     .intro { height: auto; margin-top: 100px; }
     .card::before { top: -70px; height: 120px; width: 120px; }
