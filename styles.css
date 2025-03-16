@@ -258,7 +258,9 @@ body::before {
 }
 
 .dark-mode .header {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(30, 30, 30, 0.2); /* Plus transparent pour l'effet de verre */
+    backdrop-filter: blur(10px); /* Effet de flou pour le côté verre dépoli */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */; 
 }
 
 .dark-mode .project-card,
@@ -266,7 +268,7 @@ body::before {
 .dark-mode .description,
 .dark-mode .footer,
 .dark-mode .card {
-    background: rgba(40, 40, 40, 0.9);
+    background: rgba(40, 40, 40, 0.4);
     color: #e0e0e0;
 }
 .dark-mode .footer p {
@@ -316,11 +318,21 @@ body::before {
     .projects { justify-content: center; }
     .project-card { width: 45%; }
     #darkmode-btn { padding: 7px 13px; }
+    .dark-mode .header {
+        background: rgba(30, 30, 30, 0.2); /* Plus transparent pour l'effet de verre */
+        backdrop-filter: blur(10px); /* Effet de flou pour le côté verre dépoli */
+        -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */; 
+    }
 }
 
 @media (max-width: 900px) {
     .container { flex-direction: column; }
     .main-image img { height: 300px; }
+    .dark-mode .header {
+        background: rgba(30, 30, 30, 0.2); /* Plus transparent pour l'effet de verre */
+        backdrop-filter: blur(10px); /* Effet de flou pour le côté verre dépoli */
+        -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -332,9 +344,11 @@ body::before {
     .card::before { top: -70px; height: 120px; width: 120px; }
     #darkmode-btn { padding: 6px 12px; }
 
-    .dark-mode .header,
-    .dark-mode .footer {
-        background: rgba(0, 0, 0, 0.6);
+    .dark-mode .footer,
+    .dark-mode .header {
+        background: rgba(30, 30, 30, 0.2); /* Plus transparent pour l'effet de verre */
+        backdrop-filter: blur(10px); /* Effet de flou pour le côté verre dépoli */
+        -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */; 
     }
 }
 
@@ -348,5 +362,18 @@ body::before {
     .thumbnails img { width: 60px; height: 60px; }
     .main-image img { height: 200px; }
     #darkmode-btn { padding: 6px 12px; }
+    .dark-mode .header {
+        background: rgba(30, 30, 30, 0.2); /* Plus transparent pour l'effet de verre */
+        backdrop-filter: blur(10px); /* Effet de flou pour le côté verre dépoli */
+        -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */; 
+    }
 }
-@media (max-width:400px){.profile-photo{top:220px; /* Ajuste cette valeur pour descendre ou monter la photo */}}
+@media (max-width:400px){.profile-photo{
+    top:220px; /* Ajuste cette valeur pour descendre ou monter la photo */}
+    .dark-mode .header {
+        background: rgba(30, 30, 30, 0.2); /* Plus transparent pour l'effet de verre */
+        backdrop-filter: blur(10px); /* Effet de flou pour le côté verre dépoli */
+        -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */; 
+    }
+}
+
